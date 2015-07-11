@@ -1,2 +1,2 @@
 # saramugo
-A free invoice system
+A free portuguese invoice system
