@@ -1,8 +1,7 @@
 <?php
 
 // liga-se ao mysql
-$password = $_POST['password'];
-$mysqli = mysqli_connect("127.0.0.1", "root", $password);
+$mysqli = mysqli_connect("127.0.0.1", "root", $_POST['password']);
 if (mysqli_connect_errno($mysqli)) {
     echo "Falha ao ligar-se ao MySql: " . mysqli_connect_error();
 }
@@ -16,12 +15,12 @@ if (!$mysqli->query("CREATE DATABASE saramugo")) {
 }
 
 // usa a base de dados e cria a tabela clientes
-if (!$mysqli->query("USE saramugo") || (!$mysqli->query("CREATE TABLE clientes {Nome VARCHAR(200), NIF INT, Email VARCHAR(50)}"))) {
+if (!$mysqli->query("USE saramugo") || (!$mysqli->query("CREATE TABLE clientes (nome VARCHAR(50), nif INT (9), email VARCHAR(50))"))) {
   echo "Falha ao criar a tabela clientes: (" . $mysqli->errno . ") " . $mysqli->error;
 }
 
-// insere dados de exemplo na tabela clientes
-if (!$mysqli->query("INSERT INTO clientes (Nome, NIF, Email) VALUES ('ClienteDeTeste', 000000000, 'cliente@exemplo.com')")) {
+// insere esquema rudimentar de campos na tabela clientes
+if (!$mysqli->query("INSERT INTO clientes (nome, nif, email) VALUES ('ClienteDeTeste', 000000000, 'cliente@exemplo.com')")) {
   echo "Falha ao inserir valores de teste: (" . $mysqli->errno . ") " . $mysqli->error;
 } else {
   echo "Valores de teste inseridos";
