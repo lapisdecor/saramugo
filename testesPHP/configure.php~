@@ -5,7 +5,7 @@
 </head>
 <body>
   <div>
-  Insira a password imediatamente
+  Por favor insira a password do mysql
   </div>
 
   <form  method="post" action="createDB.php">
