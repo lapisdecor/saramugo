@@ -1,0 +1,10 @@
+Campos a inserir na tabela clientes
+• Investiga se a base de dados já existe e se existir pergunta se queremos nova base de dados ou se queremos manter a base de dados existente
+• Se não existir base de dados cria base de dados nova
+• Colocar sql da criação de tabelas em ficheiros .sql separados de modo a ser mais fácil editar
+• criar utilizador administrador da base de dados
+• utilizadores do site podem apagar registos mas não tabelas
+• criar navegação
+• criar formulário para inserir cliente
+• criar visualização de cliente em formulário
+• criar visualização de utilizadores se utilizador for admin
